@@ -189,7 +189,6 @@ d.pop('Bob') >>> 75
 d >>> {'Michael': 95, 'Tracy': 85}
 
 
-
 #set类型，一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。
 s = set([1, 2, 3])
 s >>> {1, 2, 3}
