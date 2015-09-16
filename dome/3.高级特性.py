@@ -7,23 +7,23 @@
 #1.切片(范围取值)
 L = ['Michael', 'Sarah', 'Tracy', 'Bob', 'Jack']
 
-L[0:2] >>> ['Michael', 'Sarah']  #0-1的数据
-L[:2] >>> ['Michael', 'Sarah']  #0-1的数据
-L[1:3] >>> ['Sarah', 'Tracy'] #0-2的数据
-L[-2:-1] >>> ['Bob'] #-2的数据
+L[0:2] -[输出]-> ['Michael', 'Sarah']  #0-1的数据
+L[:2] -[输出]-> ['Michael', 'Sarah']  #0-1的数据
+L[1:3] -[输出]-> ['Sarah', 'Tracy'] #0-2的数据
+L[-2:-1] -[输出]-> ['Bob'] #-2的数据
 
 L = list(range(100))
-L[:10:2] >>> [0, 2, 4, 6, 8]  #前十个每两个取一个
-L[::5] >>> [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95] #索油数每五个取一个
+L[:10:2] -[输出]-> [0, 2, 4, 6, 8]  #前十个每两个取一个
+L[::5] -[输出]-> [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95] #索油数每五个取一个
 
 L[:] #完整拷贝
 
 #tuple 可以切片
-(0,1,2,3,4,5,6,7,8)[0:3] >>> (0,1,2)
+(0,1,2,3,4,5,6,7,8)[0:3] -[输出]-> (0,1,2)
 
 #字符串也可以切片
-'ABCDEFG'[:3] >>> 'ABC'
-'ABCDEFG'[::2] >>> 'ACEG'
+'ABCDEFG'[:3] -[输出]-> 'ABC'
+'ABCDEFG'[::2] -[输出]-> 'ACEG'
 
 
 #迭代，list，dict，tuple，字符串都可以迭代,dict迭代出的是 key，其他都是对应键值数据
@@ -31,13 +31,13 @@ for key in <迭代对象>
     print(key)
 
 #判断数据是否可以迭代，Iterable
-isinstance('abc', Iterable) >>> True
-isinstance(123, Iterable) >>> False
+isinstance('abc', Iterable) -[输出]-> True
+isinstance(123, Iterable) -[输出]-> False
 
 #迭代下标
 for i, value in enumerate(['A', 'B', 'C']):
     print(i, value)
->>>
+-[输出]->
 0 A
 1 B
 2 C
@@ -45,40 +45,40 @@ for i, value in enumerate(['A', 'B', 'C']):
 #多变量循环
 for x, y in [(1, 1), (2, 4), (3, 9)]:
     print(x, y)
->>>
+-[输出]->
 1 1
 2 4
 3 9
 
 
 #列表生成
-list(range(10)) >>> [0,1,2,3,4,5,6,7,8,9]
-list(range(1,11)) >>> [1,2,3,4,5,6,7,8,9,10]
+list(range(10)) -[输出]-> [0,1,2,3,4,5,6,7,8,9]
+list(range(1,11)) -[输出]-> [1,2,3,4,5,6,7,8,9,10]
 
-list(x * x for x in range(1, 11)) >>> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-list(x * x for x in range(1, 11) if x % 2 == 0) >>> [4, 16, 36, 64, 100]
+list(x * x for x in range(1, 11)) -[输出]-> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+list(x * x for x in range(1, 11) if x % 2 == 0) -[输出]-> [4, 16, 36, 64, 100]
 
-list(m + n for m in 'ABC' for n in 'XYZ') >>> ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
+list(m + n for m in 'ABC' for n in 'XYZ') -[输出]-> ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
 
 d = {'x': 'A', 'y': 'B', 'z': 'C' }
-list(k + '=' + v for k, v in d.items()) >>> ['y=B', 'x=A', 'z=C']
+list(k + '=' + v for k, v in d.items()) -[输出]-> ['y=B', 'x=A', 'z=C']
 
 L = ['Hello', 'World', 'IBM', 'Apple']
-list(s.lower() for s in L) >>> ['hello', 'world', 'ibm', 'apple']
+list(s.lower() for s in L) -[输出]-> ['hello', 'world', 'ibm', 'apple']
 
 
 #生成器generator（保存的是算法）
 g = (x * x for x in range(10))
-g >>> <generator object <genexpr> at 0x1022ef630>
+g -[输出]-> <generator object <genexpr> at 0x1022ef630>
 #通过 next()调用下一次的返回值(越界后会报错)
-next(g) >>> 0
-next(g) >>> 1
-next(g) >>> 4
-next(g) >>> 9
+next(g) -[输出]-> 0
+next(g) -[输出]-> 1
+next(g) -[输出]-> 4
+next(g) -[输出]-> 9
 ...
-next(g) >>> 81
+next(g) -[输出]-> 81
 next(g)
->>>
+-[输出]->
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 StopIteration
@@ -106,7 +106,7 @@ def fib(max):
     return 'done'
 
 f = fib(6)
-f >>> <generator object fib at 0x104feaaa0>
+f -[输出]-> <generator object fib at 0x104feaaa0>
 #最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。
 #而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。
 #但是用for循环调用generator时，发现拿不到generator的return语句的返回值。如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value中：
@@ -118,7 +118,7 @@ while True:
     except StopIteration as e:
         print('Generator return value:', e.value)
         break
->>>
+-[输出]->
 g: 1
 g: 1
 g: 2

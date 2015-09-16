@@ -34,10 +34,10 @@ def move(x, y, step, angle=0):
     return nx, ny
 
 x, y = move(100, 100, 60, math.pi / 6)
-print(x, y) >>> 151.96152422706632 70.0
+print(x, y) -[输出]-> 151.96152422706632 70.0
 #单一值也可接收，return 对象为 tuple
 r = move(100, 100, 60, math.pi / 6)
-print(r) >>> (151.96152422706632, 70.0)
+print(r) -[输出]-> (151.96152422706632, 70.0)
 #函数执行完毕也没有return语句时，自动return None。
 
 
@@ -49,17 +49,17 @@ def power(x, n=2):
         s = s * x
     return s
 
-power(5) >>> 25
-power(5, 2) >>> 25
+power(5) -[输出]-> 25
+power(5, 2) -[输出]-> 25
 
 #默认参数为可变参可能导致的问题 。eg：
 def add_end(L=[]):
     L.append('END')
     return L
 
-add_end() >>> ['END']
-add_end() >>> ['END', 'END']
-add_end() >>> ['END', 'END', 'END']
+add_end() -[输出]-> ['END']
+add_end() -[输出]-> ['END', 'END']
+add_end() -[输出]-> ['END', 'END', 'END']
 #默认参数为可变参可能导致的问题 。解决方法（转变为不可变参） eg:
 def add_end(L=None):
     if L is None:
@@ -74,8 +74,8 @@ def calc(numbers):
         sum = sum + n * n
     return sum
 
-calc([1, 2, 3]) >>> 14
-calc((1, 3, 5, 7)) >>> 84
+calc([1, 2, 3]) -[输出]-> 14
+calc((1, 3, 5, 7)) -[输出]-> 84
 
 #将接收的参数作为一个 tuple,(*key)
 def calc(*numbers):
@@ -84,21 +84,21 @@ def calc(*numbers):
         sum = sum + n * n
     return sum
 
-calc(1, 2, 3) >>> 14
-calc(1, 3, 5, 7) >>> 84
+calc(1, 2, 3) -[输出]-> 14
+calc(1, 3, 5, 7) -[输出]-> 84
 
 nums = [1, 2, 3]
-calc(*nums) >>> 14
+calc(*nums) -[输出]-> 14
 
 #关键字参数(**key)
 def person(name, age, **kw):
     print('name:', name, 'age:', age, 'other:', kw)
 
-person('Bob', 35, city='Beijing') >>> name: Bob age: 35 other: {'city': 'Beijing'}
-person('Adam', 45, gender='M', job='Engineer') >>> name: Adam age: 45 other: {'gender': 'M', 'job': 'Engineer'}
+person('Bob', 35, city='Beijing') -[输出]-> name: Bob age: 35 other: {'city': 'Beijing'}
+person('Adam', 45, gender='M', job='Engineer') -[输出]-> name: Adam age: 45 other: {'gender': 'M', 'job': 'Engineer'}
 
 extra = {'city': 'Beijing', 'job': 'Engineer'}
-person('Jack', 24, **extra) >>> name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
+person('Jack', 24, **extra) -[输出]-> name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
 #kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外的extra。
 
 
@@ -106,12 +106,12 @@ person('Jack', 24, **extra) >>> name: Jack age: 24 other: {'city': 'Beijing', 'j
 def person(name, age, *, city, job):
     print(name, age, city, job)
 
-person('Jack', 24, 'Beijing', 'Engineer') >>> <出错>
+person('Jack', 24, 'Beijing', 'Engineer') -[输出]-> <出错>
 #关键字参数允许缺省
 def person(name, age, *, city='Beijing', job):
     print(name, age, city, job)
 
-person('Jack', 24, job='Engineer') >>> Jack 24 Beijing Engineer
+person('Jack', 24, job='Engineer') -[输出]-> Jack 24 Beijing Engineer
 
 
 #参数组合
@@ -134,8 +134,8 @@ def fact(n):
         return 1
     return n * fact(n - 1)
 
-fact(1) >>> 1
-fact(5) >>> 120
+fact(1) -[输出]-> 1
+fact(5) -[输出]-> 120
 #尾递归调用解决栈溢出
 def fact(n):
     return fact_iter(n, 1)

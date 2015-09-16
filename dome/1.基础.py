@@ -38,21 +38,21 @@ a = False
 PI = 3.14159265359
 
 #除法
-10/3  >>>  3.33333333 #精确
-10//3 >>>  3 #取整(地板除)
-10%3 >>> 1  #取余
+10/3  -[输出]->  3.33333333 #精确
+10//3 -[输出]->  3 #取整(地板除)
+10%3 -[输出]-> 1  #取余
 
 
 #编码（默认 unicode）
 
 #获取字符编码
-ord('A') >>> 65
-ord('中') >>> 20013
+ord('A') -[输出]-> 65
+ord('中') -[输出]-> 20013
 #从编码获取字符串
-chr(65) >>> 'A'
-chr(20013) >>> '中'
+chr(65) -[输出]-> 'A'
+chr(20013) -[输出]-> '中'
 
-'\u4e2d\u6587' >>> '中文'
+'\u4e2d\u6587' -[输出]-> '中文'
 
 #传输需要使用 bytes 类型数据
 x = b'Abc'   #转为 bytes 类型数据
@@ -60,20 +60,20 @@ x = b'Abc'   #转为 bytes 类型数据
 #如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。
 #'ABC'和b'ABC'，前者是str，后者虽然内容显示得和前者一样，但bytes的每个字符都只占用一个字节。
 #编码：
-'ABC'.encode('ascii')  >>>  b'ABC'
-'中文'.encode('utf-8') >>>  b'\xe4\xb8\xad\xe6\x96\x87'
+'ABC'.encode('ascii')  -[输出]->  b'ABC'
+'中文'.encode('utf-8') -[输出]->  b'\xe4\xb8\xad\xe6\x96\x87'
 #'ascii'编码不包含中文
 #反编码：
-b'ABC'.decode('ascii') >>> 'ABC'
-b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8') >>> '中文'
+b'ABC'.decode('ascii') -[输出]-> 'ABC'
+b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8') -[输出]-> '中文'
 
 #计算 str 字符长度，btyes 类型下为字节长度(python2.*以下例子貌似跑不通..待测)
-len('abc') >>> 3
-len('中文') >>> 2
+len('abc') -[输出]-> 3
+len('中文') -[输出]-> 2
 
-len(b'ABC') >>> 3
-len(b'\xe4\xb8\xad\xe6\x96\x87') >>> 6
-len('中文'.encode('utf-8')) >>> 6
+len(b'ABC') -[输出]-> 3
+len(b'\xe4\xb8\xad\xe6\x96\x87') -[输出]-> 6
+len('中文'.encode('utf-8')) -[输出]-> 6
 
 
 #解释器声明以及编码声明
@@ -82,14 +82,14 @@ len('中文'.encode('utf-8')) >>> 6
 
 
 #数据格式化
-'Hello, %s' % 'world' >>>  'Hello, world'
-'Hi, %s, you have $%d.' % ('Michael', 1000000) >>> 'Hi, Michael, you have $1000000.'
-'%2d-%02d' % (3, 1) >>> ' 3-01'
-'%.2f' % 3.1415926 >>> '3.14'
+'Hello, %s' % 'world' -[输出]->  'Hello, world'
+'Hi, %s, you have $%d.' % ('Michael', 1000000) -[输出]-> 'Hi, Michael, you have $1000000.'
+'%2d-%02d' % (3, 1) -[输出]-> ' 3-01'
+'%.2f' % 3.1415926 -[输出]-> '3.14'
 
 #%s永远起作用，它会把任何数据类型转换为字符串
 #用%%来表示一个%
-'growth rate: %d %%' % 7 >>> 'growth rate: 7 %'
+'growth rate: %d %%' % 7 -[输出]-> 'growth rate: 7 %'
 #占位符
 %d	整数
 %f	浮点数
@@ -99,25 +99,25 @@ len('中文'.encode('utf-8')) >>> 6
 
 #数据类型是列表：list。list是一种有序的集合，可以随时添加和删除其中的元素。类似 js 的数组
 classmates = ['Michael', 'Bob', 'Tracy']
-classmates >>> ['Michael', 'Bob', 'Tracy']
-len(classmates) >>> 3
-classmates[0] >>> 'Michael'
-classmates[-1] >>> 'Tracy'
+classmates -[输出]-> ['Michael', 'Bob', 'Tracy']
+len(classmates) -[输出]-> 3
+classmates[0] -[输出]-> 'Michael'
+classmates[-1] -[输出]-> 'Tracy'
 classmates.append('Adam') #尾部追加
-classmates >>> ['Michael', 'Bob', 'Tracy', 'Adam']
+classmates -[输出]-> ['Michael', 'Bob', 'Tracy', 'Adam']
 classmates.insert(1, 'Jack') #插入到指定位置
-classmates >>> ['Michael', 'Jack', 'Bob', 'Tracy', 'Adam']
-classmates.pop() >>> 'Adam' #删除并返回被删除元素
-classmates >>> ['Michael', 'Jack', 'Bob', 'Tracy']
-classmates.pop(1) >>> 'Jack' #删除指定位置并返回被删除元素
-classmates >>> ['Michael', 'Bob', 'Tracy']
+classmates -[输出]-> ['Michael', 'Jack', 'Bob', 'Tracy', 'Adam']
+classmates.pop() -[输出]-> 'Adam' #删除并返回被删除元素
+classmates -[输出]-> ['Michael', 'Jack', 'Bob', 'Tracy']
+classmates.pop(1) -[输出]-> 'Jack' #删除指定位置并返回被删除元素
+classmates -[输出]-> ['Michael', 'Bob', 'Tracy']
 classmates[1] = 'Sarah' #替换
-classmates >>> ['Michael', 'Sarah', 'Tracy']
+classmates -[输出]-> ['Michael', 'Sarah', 'Tracy']
 #存储不同类型
 L = ['Apple', 123, True]
 #多维
 S = ['python', 'java', ['asp', 'php'], 'scheme']
-len(s) >>> 4
+len(s) -[输出]-> 4
 #空 list 的 len 为0
 
 
@@ -129,7 +129,7 @@ classmates = ('Michael', )
 t = ('a', 'b', ['A', 'B'])
 t[2][0] = 'X'
 t[2][1] = 'Y'
-t >>> ('a', 'b', ['X', 'Y'])
+t -[输出]-> ('a', 'b', ['X', 'Y'])
 
 
 #条件判断(注意语句后冒号)
@@ -161,7 +161,7 @@ for name in names:
     print(name)
 
 #生成 list
-list(range(5)) >>> [0, 1, 2, 3, 4] #rang(x)会生成0到 x-1的数字序列（range(0,x-1)），list()会将此序列转为 list
+list(range(5)) -[输出]-> [0, 1, 2, 3, 4] #rang(x)会生成0到 x-1的数字序列（range(0,x-1)），list()会将此序列转为 list
 #计算0-100的数字之和
 sum = 0
 for x in range(101):
@@ -178,33 +178,33 @@ print(sum)
 
 #字典dict，key-value的储存方式
 d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
-d['Michael'] >>> 95
+d['Michael'] -[输出]-> 95
 #判断 key 是否存在
-'Thomas' in d  >>> False
+'Thomas' in d  -[输出]-> False
 #get()方法取值
 d.get('Thomas',<自定义不存在时返回的值>) #返回None的时候Python的交互式命令行不显示结果。
 d['Thomas']  #直接取值，不存在会报错..推荐 get()
 #删除，pop(key)
-d.pop('Bob') >>> 75
-d >>> {'Michael': 95, 'Tracy': 85}
+d.pop('Bob') -[输出]-> 75
+d -[输出]-> {'Michael': 95, 'Tracy': 85}
 
 
 #set类型，一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。
 s = set([1, 2, 3])
-s >>> {1, 2, 3}
+s -[输出]-> {1, 2, 3}
 #自动过滤重复
 d = set([1, 1, 2, 2, 3, 3])
-d >>> {1, 2, 3}
+d -[输出]-> {1, 2, 3}
 #添加方法 add(),可重复添加，但没什么卵用....
 s.add(4)
-s >>> {1, 2, 3, 4}
+s -[输出]-> {1, 2, 3, 4}
 s.add(4)
-s >>> {1, 2, 3, 4}
+s -[输出]-> {1, 2, 3, 4}
 #删除方法 remove()
 s.remove(4)
-s >>> {1, 2, 3}
+s -[输出]-> {1, 2, 3}
 #可做交集并集操作
 s1 = set([1, 2, 3])
 s2 = set([2, 3, 4])
-s1 & s2 >>> {2, 3}
-s1 | s2 >>> {1, 2, 3, 4}
+s1 & s2 -[输出]-> {2, 3}
+s1 | s2 -[输出]-> {1, 2, 3, 4}
